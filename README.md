@@ -3,6 +3,7 @@
 A new Flutter project.
 
 ## Getting Started
+https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk
 
 This project is a starting point for a Flutter application.
 
