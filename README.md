@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 # Indirmek istiyorsanız
-<a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk" download="app-release.apk"><img src="downloads.png" alt="Download the app" style="width:100px;height:70px;"></a>
+<a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/1.0.0/app-release.apk" download="app-release.apk"><img src="downloads.png" alt="Download the app" style="width:100px;height:70px;"></a>
 
 
 This project is a starting point for a Flutter application.
