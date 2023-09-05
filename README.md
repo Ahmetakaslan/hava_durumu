@@ -1,6 +1,6 @@
 # hava_durumu_kurs
+# A new Flutter project.
 
-A new Flutter project.
 <img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/00b503c6-c5e5-4f0c-91a9-9825f891d62d" width="350" height="700">
 <img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/a68d1ab3-e475-42c2-85ce-234888dcfad2" width="350" height="700">
 
