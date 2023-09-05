@@ -1,7 +1,7 @@
 # hava_durumu_kurs
 
 A new Flutter project.
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/af42c066-332c-4f6d-92b1-ae7377f72d8b.jpeg" width="350" height="700">
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/af42c066-332c-4f6d-92b1-ae7377f72d8b" width="350" height="700">
 <img src="https://user-images.githubusercontent.com/95686166/236202098-600a4165-188e-4869-8c18-bd898049c986.jpeg" width="350" height="700">
 ![beş]()https://
 ![bir](https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/00b503c6-c5e5-4f0c-91a9-9825f891d62d)
