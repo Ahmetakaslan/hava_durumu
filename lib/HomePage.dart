@@ -272,7 +272,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text('${value.round()}',
                                 style: TextStyle(
-                                    color: Colors.white,
+                                      color: Colors.white,
                                     fontWeight: FontWeight.bold)),
                           ],
                         )),
