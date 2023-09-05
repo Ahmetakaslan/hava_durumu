@@ -48,8 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
       position = await _determinePosition();
       print("${position}");
       if (position == null) {
-        lat = "41.0082";
+       setState(() {
+          lat = "41.0082";
         lon = "28.9784";
+       });
       } else {
         setState(() {
           lat = position!.latitude.toString() as String?;
