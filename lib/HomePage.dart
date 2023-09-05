@@ -32,8 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // ignore: prefer_typing_uninitialized_variables
   var response;
   Weather? weather;
-  String? lat="41.0122";
-  String? lon="28.976";
+  String? lat = "41.0122";
+  String? lon = "28.976";
 
   List<String> icons = [];
   List<double> temperatures = [];
@@ -47,17 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
       await _determinePosition();
       position = await _determinePosition();
       print("${position}");
-      if(position==null){
-        
-       lat="41.0082";
-        lon="28.9784";
-      }else{
-         setState(() {
-        lat = position!.latitude.toString() as String?;
-        lon = position!.longitude.toString() as String?;
-      });
+      if (position == null) {
+        lat = "41.0082";
+        lon = "28.9784";
+      } else {
+        setState(() {
+          lat = position!.latitude.toString() as String?;
+          lon = position!.longitude.toString() as String?;
+        });
       }
-     
 
       debugPrint("out getDevicePossition");
     } catch (e) {
@@ -153,13 +151,12 @@ class _MyHomePageState extends State<MyHomePage> {
     temperatures.clear();
     icons.clear();
     dates.clear();
-    
-      for (int i = 7; i < 40; i += 8) {
-        temperatures.add(a["list"][i]["main"]["temp"]);
-        icons.add(a["list"][i]["weather"][0]["icon"]);
-        dates.add(a["list"][i]["dt_txt"]);
-      }
-  
+
+    for (int i = 7; i < 40; i += 8) {
+      temperatures.add(a["list"][i]["main"]["temp"]);
+      icons.add(a["list"][i]["weather"][0]["icon"]);
+      dates.add(a["list"][i]["dt_txt"]);
+    }
 
     print("temperatures=> after search $temperatures");
     print("icons=> after search $icons");
@@ -228,98 +225,95 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Container myBackContainer(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage("${picture}"),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage("${picture}"),
+          ),
         ),
-      ),
-      child: (  temperature == null)
-          ? Center(
-              child: CircularSeekBar(
-              width: double.infinity,
-              height: 250,
-              progress: 100,
-              barWidth: 8,
-              startAngle: 45,
-              sweepAngle: 270,
-              strokeCap: StrokeCap.butt,
-              progressGradientColors: const [
-                Colors.red,
-                Colors.orange,
-                Colors.yellow,
-                Colors.green,
-                Colors.blue,
-                Colors.indigo,
-                Colors.purple
-              ],
-              innerThumbRadius: 5,
-              innerThumbStrokeWidth: 3,
-              innerThumbColor: Colors.white,
-              outerThumbRadius: 5,
-              outerThumbStrokeWidth: 10,
-              outerThumbColor: Colors.blueAccent,
-              dashWidth: 1,
-              dashGap: 2,
-              animation: true,
-              valueNotifier: _valueNotifier,
-              child: Center(
-                child: ValueListenableBuilder(
-                    valueListenable: _valueNotifier,
-                    
-                    builder: (_, double value, __) => Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text('${value.round()}',
-                                style: TextStyle(
+        child: (temperature == null)
+            ? Center(
+                child: CircularSeekBar(
+                width: double.infinity,
+                height: 250,
+                progress: 100,
+                barWidth: 8,
+                startAngle: 45,
+                sweepAngle: 270,
+                strokeCap: StrokeCap.butt,
+                progressGradientColors: const [
+                  Colors.red,
+                  Colors.orange,
+                  Colors.yellow,
+                  Colors.green,
+                  Colors.blue,
+                  Colors.indigo,
+                  Colors.purple
+                ],
+                innerThumbRadius: 5,
+                innerThumbStrokeWidth: 3,
+                innerThumbColor: Colors.white,
+                outerThumbRadius: 5,
+                outerThumbStrokeWidth: 10,
+                outerThumbColor: Colors.blueAccent,
+                dashWidth: 1,
+                dashGap: 2,
+                animation: true,
+                valueNotifier: _valueNotifier,
+                child: Center(
+                  child: ValueListenableBuilder(
+                      valueListenable: _valueNotifier,
+                      builder: (_, double value, __) => Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text('${value.round()}',
+                                  style: TextStyle(
                                       color: Colors.white,
-                                    fontWeight: FontWeight.bold)),
-                          ],
-                        )),
-              ),
-            ))
-          : MyScaffold(context));
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          )),
+                ),
+              ))
+            : MyScaffold(context));
   }
 
   Scaffold MyScaffold(BuildContext context) {
     return Scaffold(
-              backgroundColor: Colors.transparent,
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Image.network(
-                          "https://openweathermap.org/img/wn/$icon@4x.png"),
-                    ),
-                    myRow("İl: ", "${weather!.city}"),
-                    myRow("Sıcaklık: ", "${weather!.temperature}"),
-                    myRow("Açıklama: ", "${weather!.description}"),
-                    myRow("Rüzgar Hızı: ", "${weather!.windSpeed}"),
-                    IconButton(
-                      onPressed: () async {
-                        city = await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchPage()));
-                        print("City name after searchPage=>" + city);
-                        setState(() {});
-                        await getDataFiveDayWithName();
-                        await getDataWithName();
+      backgroundColor: Colors.transparent,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Image.network(
+                  "https://openweathermap.org/img/wn/$icon@4x.png"),
+            ),
+            myRow("İl: ", "${weather!.city}"),
+            myRow("Sıcaklık: ", "${weather!.temperature}"),
+            myRow("Açıklama: ", "${weather!.description}"),
+            myRow("Rüzgar Hızı: ", "${weather!.windSpeed}"),
+            IconButton(
+              onPressed: () async {
+                city = await Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SearchPage()));
+                print("City name after searchPage=>" + city);
+                setState(() {});
+                await getDataFiveDayWithName();
+                await getDataWithName();
 
-                        print("after all");
-                      },
-                      icon: Icon(
-                        Icons.search,
-                        size: 35,
-                        color: Colors.white,
-                      ),
-                    ),
-                    buidCard()
-                  ],
-                ),
+                print("after all");
+              },
+              icon: Icon(
+                Icons.search,
+                size: 35,
+                color: Colors.white,
               ),
-            );
+            ),
+            buidCard()
+          ],
+        ),
+      ),
+    );
   }
 
   Widget buidCard() {
