@@ -3,17 +3,17 @@
 
 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/fcb2d1dc-7186-45ff-8566-cbaa7d08b466" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/fcb2d1dc-7186-45ff-8566-cbaa7d08b466" width="350" height="750"> 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/bf5245fb-2348-4039-929a-29aa30bc1a0d" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/bf5245fb-2348-4039-929a-29aa30bc1a0d" width="350" height="750"> 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/cbd02fa2-4e01-4207-b3d1-12da9caa5269" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/cbd02fa2-4e01-4207-b3d1-12da9caa5269" width="350" height="750"> 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/c853e09f-add6-45a9-86d6-01f46feac2df" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/c853e09f-add6-45a9-86d6-01f46feac2df" width="350" height="750"> 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/c0badb9b-1191-4d0d-80f4-0ee2cc8807a4" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/c0badb9b-1191-4d0d-80f4-0ee2cc8807a4" width="350" height="750"> 
 
-<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/a2fabdb1-4662-4808-9324-faea720fa4de" width="350" height="700"> 
+<img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/a2fabdb1-4662-4808-9324-faea720fa4de" width="350" height="750"> 
 
 
 ## Getting Started
