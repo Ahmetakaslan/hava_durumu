@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       print("came getDevicePossition");
       print("possiton first =>${position}");
-      await _determinePosition();
+   
       position = await _determinePosition();
       print("possition =${position}");
       if (position == null) {
