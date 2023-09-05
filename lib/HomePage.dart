@@ -46,11 +46,11 @@ class _MyHomePageState extends State<MyHomePage> {
       print("possiton first =>${position}");
       await _determinePosition();
       position = await _determinePosition();
-      print("${position}");
+      print("possition =${position}");
       if (position == null) {
        setState(() {
           lat = "41.0082";
-        lon = "28.9784";
+          lon = "28.9784";
        });
       } else {
         setState(() {
