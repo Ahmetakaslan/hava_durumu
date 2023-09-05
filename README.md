@@ -3,7 +3,8 @@
 A new Flutter project.
 
 ## Getting Started
-https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk
+<a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk" download="app-release.apk"><img src="down.png" alt="Download the app" style="width:100px;height:70px;"></a>
+
 
 This project is a starting point for a Flutter application.
 
