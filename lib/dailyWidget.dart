@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:hava_durumu_kurs/constants.dart';
-import 'package:hava_durumu_kurs/weather.dart';
-
-import 'cliperClass.dart';
 
 class DailyWidgetCard extends StatelessWidget {
   String icon;
