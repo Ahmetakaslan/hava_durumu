@@ -1,6 +1,9 @@
 # hava_durumu_kurs
 # A new Flutter project.
 
+## Getting Started
+# Indirmek istiyorsanız
+<a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk" download="app-release.apk"><img src="downloads.png" alt="Download the app" style="width:100px;height:70px;"></a>
 
 
 <img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/fcb2d1dc-7186-45ff-8566-cbaa7d08b466" width="350" height="750"> 
@@ -16,9 +19,6 @@
 <img src="https://github.com/Ahmetakaslan/hava_durumu/assets/95686166/a2fabdb1-4662-4808-9324-faea720fa4de" width="350" height="750"> 
 
 
-## Getting Started
-# Indirmek istiyorsanız
-<a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/1.0.0/app-release.apk" download="app-release.apk"><img src="downloads.png" alt="Download the app" style="width:100px;height:70px;"></a>
 
 
 This project is a starting point for a Flutter application.
