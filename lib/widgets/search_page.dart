@@ -15,7 +15,6 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   final String api = "d97eddb462a8d6008c91e048083942c2";
   String? city;
-  
 
   Future<void> getData() async {
     var response = await http.get(
@@ -46,34 +45,10 @@ class _SearchPageState extends State<SearchPage> {
       );
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else {
-
-      Control();
+    Navigator.pop(context, sehirController.text);
     }
   }
 
-  void Control() {
-    if (sehirController.text == "") {
-      SnackBar snackBar = SnackBar(
-          elevation: 0,
-          duration: Duration(seconds: 1),
-          backgroundColor: Colors.transparent,
-          content: Container(
-            child: Center(  
-              child: Text(
-                "Lütfen geçerli isim giriniz",
-                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-              ),
-            ),
-            decoration: BoxDecoration(
-              color: Colors.red,
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ));
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    } else {
-      Navigator.pop(context, sehirController.text);
-    }
-  }
 
   String picture = "assets/back_black.jpg";
   TextEditingController sehirController = TextEditingController();
@@ -102,9 +77,11 @@ class _SearchPageState extends State<SearchPage> {
                 child: TextField(
                   onSubmitted: (value) {
                     setState(() {
+                      sehirController.text= sehirController.text.replaceAll(".", "");
+                    sehirController.text=   sehirController.text.replaceAll(" ", "");
+
                       city = sehirController.text;
                       getData();
-                 
                     });
                   },
                   autofocus: true,
@@ -119,6 +96,9 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         onPressed: () {
                           setState(() {
+                            sehirController.text= sehirController.text.replaceAll(".", "");
+                            sehirController.text=   sehirController.text.replaceAll(" ", "");
+
                             city = sehirController.text;
                             getData();
                           });

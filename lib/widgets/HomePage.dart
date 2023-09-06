@@ -32,8 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // ignore: prefer_typing_uninitialized_variables
   var response;
   Weather? weather;
-  String? lat ;
-  String? lon ;
+  String? lat;
+  String? lon;
 
   List<String> icons = [];
   List<double> temperatures = [];
@@ -44,25 +44,30 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       print("came getDevicePossition");
       print("possiton first =>${position}");
-   
+
       position = await _determinePosition();
       print("possition =${position}");
-        setState(() {
-          lat = position!.latitude.toString() as String?;
-          lon = position!.longitude.toString() as String?;
-        });
-   
+      setState(() {
+        lat = position!.latitude.toString() as String?;
+        lon = position!.longitude.toString() as String?;
+      });
 
       debugPrint("out getDevicePossition");
     } catch (e) {
-       setState(() {
+      setState(() {
         print("bulamadı");
-          lat = "41.0082";
-          lon = "28.9784";
-     position=Position(longitude: 28.9784, latitude: 41.0082, timestamp: DateTime.now(), accuracy: 5.0, altitude: 5.0, heading: 0.0, speed: 0.0, speedAccuracy: 0.5);
-
-          
-       });
+        lat = "41.0082";
+        lon = "28.9784";
+        position = Position(
+            longitude: 28.9784,
+            latitude: 41.0082,
+            timestamp: DateTime.now(),
+            accuracy: 5.0,
+            altitude: 5.0,
+            heading: 0.0,
+            speed: 0.0,
+            speedAccuracy: 0.5);
+      });
       print("error in getDevicePossition => $e");
     }
   }
@@ -71,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> getDataFromLocation() async {
     try {
       response = await http.get(Uri.parse(
-          'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$api&units=metric&lang=tr'));
+          'https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$api&lang=tr&units=metric'));
       weather = await Weather.fromJson(
         jsonDecode(response.body),
       );
@@ -236,7 +241,11 @@ class _MyHomePageState extends State<MyHomePage> {
             image: AssetImage("${picture}"),
           ),
         ),
-        child: (temperature == null || position==null || temperatures==null || dates==null||icons==null)
+        child: (temperature == null ||
+                position == null ||
+                temperatures == null ||
+                dates == null ||
+                icons == null)
             ? Center(
                 child: CircularSeekBar(
                 width: double.infinity,
@@ -301,10 +310,12 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () async {
                 city = await Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SearchPage()));
+
                 print("City name after searchPage=>" + city);
-                setState(() {});
-                await getDataFiveDayWithName();
-                await getDataWithName();
+                setState(() async {
+                  await getDataFiveDayWithName();
+                  await getDataWithName();
+                });
 
                 print("after all");
               },
@@ -402,7 +413,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // Android's shouldShowRequestPermissionRationale
         // returned true. According to Android guidelines
         // your App should show an explanatory UI now.
-        print("we out _determinePosition with second return sondaki=>$permission");
+        print(
+            "we out _determinePosition with second return sondaki=>$permission");
 
         return Future.error('Location permissions are denied');
       }
