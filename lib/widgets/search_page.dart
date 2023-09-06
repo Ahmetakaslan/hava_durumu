@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:hava_durumu_kurs/HomePage.dart';
+import 'package:hava_durumu_kurs/widgets/HomePage.dart';
 import 'package:http/http.dart' as http;
-import 'package:hava_durumu_kurs/constants.dart';
+import 'package:hava_durumu_kurs/constants/constants.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

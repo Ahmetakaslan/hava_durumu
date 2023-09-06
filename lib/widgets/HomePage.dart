@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:circular_seek_bar/circular_seek_bar.dart';
-import 'package:hava_durumu_kurs/constants.dart';
-import 'package:hava_durumu_kurs/weather.dart';
+import 'package:hava_durumu_kurs/constants/constants.dart';
+import 'package:hava_durumu_kurs/class/weather.dart';
 import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/material.dart';
 
-import 'package:hava_durumu_kurs/search_page.dart';
+import 'package:hava_durumu_kurs/widgets/search_page.dart';
 
 import 'dailyWidget.dart';
 
@@ -32,8 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   // ignore: prefer_typing_uninitialized_variables
   var response;
   Weather? weather;
-  String? lat = "41.0122";
-  String? lon = "28.976";
+  String? lat ;
+  String? lon ;
 
   List<String> icons = [];
   List<double> temperatures = [];
@@ -47,20 +47,22 @@ class _MyHomePageState extends State<MyHomePage> {
    
       position = await _determinePosition();
       print("possition =${position}");
-      if (position == null) {
-       setState(() {
-          lat = "41.0082";
-          lon = "28.9784";
-       });
-      } else {
         setState(() {
           lat = position!.latitude.toString() as String?;
           lon = position!.longitude.toString() as String?;
         });
-      }
+   
 
       debugPrint("out getDevicePossition");
     } catch (e) {
+       setState(() {
+        print("bulamadı");
+          lat = "41.0082";
+          lon = "28.9784";
+     position=Position(longitude: 28.9784, latitude: 41.0082, timestamp: DateTime.now(), accuracy: 5.0, altitude: 5.0, heading: 0.0, speed: 0.0, speedAccuracy: 0.5);
+
+          
+       });
       print("error in getDevicePossition => $e");
     }
   }
@@ -73,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
       weather = await Weather.fromJson(
         jsonDecode(response.body),
       );
+      print("get data From Location =>$weather");
       backPhoto();
 
       print("Durum ne : ${weather!.description}");
@@ -233,7 +236,7 @@ class _MyHomePageState extends State<MyHomePage> {
             image: AssetImage("${picture}"),
           ),
         ),
-        child: (temperature == null)
+        child: (temperature == null || position==null || temperatures==null || dates==null||icons==null)
             ? Center(
                 child: CircularSeekBar(
                 width: double.infinity,
@@ -399,7 +402,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // Android's shouldShowRequestPermissionRationale
         // returned true. According to Android guidelines
         // your App should show an explanatory UI now.
-        print("we out _determinePosition with second return");
+        print("we out _determinePosition with second return sondaki=>$permission");
 
         return Future.error('Location permissions are denied');
       }

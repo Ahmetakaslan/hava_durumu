@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:hava_durumu_kurs/constants.dart';
+import 'package:hava_durumu_kurs/constants/constants.dart';
 
 class DailyWidgetCard extends StatelessWidget {
   String icon;
