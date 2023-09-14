@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double? temperature;
   Position? position;
   String? icon;
-  final String api = "d97eddb462a8d6008c91e048083942c2";
+  final String api = "Buraya Apinizi giriniz";
   // ignore: prefer_typing_uninitialized_variables
   var response;
   Weather? weather;
