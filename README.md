@@ -1,6 +1,6 @@
 # hava_durumu_kurs
-# A new Flutter project.
-
+# A new Flutter project. 
+openweathermap sitesinden api alınız ve  _MyHomePageState teki api kısmına ekleyin
 ## Getting Started
 # Indirmek istiyorsanız
 <a href="https://github.com/Ahmetakaslan/hava_durumu/releases/download/v1.0.0/app-release.apk" download="app-release.apk"><img src="downloads.png" alt="Download the app" style="width:100px;height:70px;"></a>
